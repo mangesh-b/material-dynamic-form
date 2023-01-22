@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "basic-form-buider": {
+    "material-dynamic-form": {
       "projectType": "library",
-      "root": "projects/basic-form-buider",
-      "sourceRoot": "projects/basic-form-buider/src",
+      "root": "projects/material-dynamic-form",
+      "sourceRoot": "projects/material-dynamic-form/src",
       "prefix": "dy",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/basic-form-buider/ng-package.json"
+            "project": "projects/material-dynamic-form/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/basic-form-buider/tsconfig.lib.prod.json"
+              "tsConfig": "projects/material-dynamic-form/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/basic-form-buider/tsconfig.lib.json"
+              "tsConfig": "projects/material-dynamic-form/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/basic-form-buider/tsconfig.spec.json",
+            "tsConfig": "projects/material-dynamic-form/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

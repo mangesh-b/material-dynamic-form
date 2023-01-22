@@ -1,6 +1,6 @@
 /*
- * Public API Surface of basic-form-buider
+ * Public API Surface of material-dynamic-form
  */
 
-export * from './lib/basic-form-buider.component';
-export * from './lib/basic-form-buider.module';
+export * from './lib/material-dynamic-form.component';
+export * from './lib/material-dynamic-form.module';
