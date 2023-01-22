@@ -1,0 +1,49 @@
+<div id="basic-form-builder">
+    <ng-container *ngIf="fields.length">
+        <form (ngSubmit)="onSubmit(form)" [formGroup]="form" #formRef="ngForm">
+            <div *ngFor="let field of fields; let i = index;" 
+                [class]="field.classes" [class]="{'form-header': field.type === 'header'}" 
+                id="dy-{{field.name}}-{{i}}">
+                <form-dynamic [field]="field" [form]="form" [isSubmitted]="isSubmitted"
+                    [validationError]="validationError" (selectChangeEvent)="selectChangeEvent.emit($event)"
+                    (multiSelectChangeEvent)="multiSelectChangeEvent.emit($event)"
+                    (radioChangeEvent)="radioChangeEvent.emit($event)"
+                    (inputChangeEvent)="inputChangeEvent.emit($event)"
+                    (checkboxChangeEvent)="checkboxChangeEvent.emit($event)"
+                    (dateChangeEvent)="dateChangeEvent.emit($event)"
+                    (blurInputChangeEvent)="blurInputChangeEvent.emit($event)"
+                    (otpChangeEvent)="otpChangeEvent.emit($event)"
+                    (blurOtpChangeEvent)="blurOtpChangeEvent.emit($event)">
+                </form-dynamic>
+
+                <div class="fix"></div>
+            </div>
+
+            <!-- [ngStyle]="{'height': '20px'}" -->
+            <div class="error-msg transition-all col"
+                [ngClass]="validationError && validationError.genericMessage ? 'visible-on' : 'visible-off'">
+                {{validationError?.genericMessage}}
+            </div>
+
+            <div class="d-inline-block" align="{{buttons.align}}" *ngIf="buttons.display">
+                <button mat-flat-button color="primary" 
+                    *ngIf="buttons.primaryButton"
+                    class="primaryBtn">
+                    {{buttons.primaryLabel}}
+                </button>
+                <button mat-flat-button color="warn" type="button" (click)="resetForm()" 
+                    *ngIf="buttons.secondaryButton"
+                    class="secondaryBtn">
+                    {{buttons.secondaryLabel}}
+                </button>
+                <button mat-flat-button type="button" (click)="tertiaryBtnClick()" 
+                    *ngIf="buttons.tertiaryButton"
+                    class="tertiaryBtn">
+                    {{buttons.tertiaryLabel}}
+                </button>
+            </div>
+        </form>
+    </ng-container>
+
+    <ng-container *ngIf="!fields || !fields.length">Please use valid form configuration!!</ng-container>
+</div>

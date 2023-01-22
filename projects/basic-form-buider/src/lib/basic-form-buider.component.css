@@ -1,0 +1,10 @@
+.primaryBtn, .secondaryBtn, .tertiaryBtn {
+    margin: 0.5rem;
+    min-width: 120px
+}
+.tertiaryBtn {
+    border: 1px solid;
+}
+.form-header {
+    padding-bottom: 1rem;
+}

@@ -1,0 +1,77 @@
+<div [formGroup]="form" [hidden]="field.hidden" id="dy-content-fields">
+  <ng-container [ngSwitch]="field.type">
+
+    <div *ngSwitchCase="'header'">
+      <div class="dy-header-label">{{field.label}}</div>
+      <mat-divider></mat-divider>
+    </div>
+    <app-input-type *ngSwitchCase="'text'" [field]="field" [form]="form" 
+      (changeEvent)="inputChangeEvent.emit($event)" 
+      (blurEvent)="blurInputChangeEvent.emit($event)">      
+    </app-input-type>
+    <app-input-type *ngSwitchCase="'time'" [field]="field" [form]="form" 
+      (changeEvent)="inputChangeEvent.emit($event)"
+      (blurEvent)="blurInputChangeEvent.emit($event)">
+    </app-input-type>
+    <app-number-type *ngSwitchCase="'number'" [field]="field" [form]="form" 
+      (changeEvent)="inputChangeEvent.emit($event)"
+      (blurEvent)="blurInputChangeEvent.emit($event)">
+    </app-number-type>
+    <app-otpinput-type *ngSwitchCase="'otp'" [field]="field" [form]="form"
+      (changeEvent)="otpChangeEvent.emit($event)"
+      (blurEvent)="blurOtpChangeEvent.emit($event)">
+    </app-otpinput-type>
+    <app-password-type *ngSwitchCase="'password'" [field]="field" [form]="form">
+    </app-password-type>
+    <app-checkbox-type *ngSwitchCase="'checkbox'" [field]="field" [form]="form"
+      (changeEvent)="checkboxChangeEvent.emit($event)">
+    </app-checkbox-type>
+    <app-select-type *ngSwitchCase="'select'" [field]="field" 
+      (changeEvent)="selectChangeEvent.emit($event)"
+      [form]="form">
+    </app-select-type>
+    <app-countryselect-type *ngSwitchCase="'countryselect'" [field]="field"
+      (changeEvent)="selectChangeEvent.emit($event)" [form]="form">
+    </app-countryselect-type>
+    <app-groupselect-type *ngSwitchCase="'groupselect'" [field]="field" 
+      (changeEvent)="selectChangeEvent.emit($event)"
+      [form]="form">
+    </app-groupselect-type>
+    <app-radio-type *ngSwitchCase="'radio'" [field]="field" 
+      (changeEvent)="radioChangeEvent.emit($event)" [form]="form">
+    </app-radio-type>
+    <app-date-type *ngSwitchCase="'date'" [field]="field" [form]="form" 
+      (changeEvent)="dateChangeEvent.emit($event)"></app-date-type>
+    <app-textarea-type *ngSwitchCase="'textarea'" [field]="field" [form]="form"
+      (blurEvent)="blurInputChangeEvent.emit($event)">
+    </app-textarea-type>
+
+    <div *ngIf="!isValid && (isDirty || isSubmitted)" class="error-msg">
+      <div [hidden]="!isRequired">
+        {{field.reqMessage}} <span *ngIf="!field.reqMessage">{{field.label}} is required</span>
+      </div>
+      <div [hidden]="!matDatepickerMin">
+        {{field.label}} should be inferior
+      </div>
+      <div [hidden]="!matDatepickerMax">
+        {{field.label}} is greater
+      </div>
+      <div [hidden]="!mustGreater">
+        End date must be greater then Start date
+      </div>
+      <div [hidden]="!passwordNotMatched">
+        Confirm Password not matched
+      </div>
+      <div [hidden]="!minLengthError">
+        {{field.reqMessage}} is minimum issue
+      </div>
+      <div [hidden]="!maxLengthError">
+        {{field.reqMessage}} is maxlength issue
+      </div>
+    </div>
+    <div [ngClass]="fieldNameError && isValid ? 'visible-off' : 'visible-on'" class="error-msg">
+      {{fieldNameError}}
+    </div>
+    
+  </ng-container>
+</div>
