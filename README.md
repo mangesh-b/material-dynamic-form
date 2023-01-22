@@ -1,11 +1,11 @@
 # Material Dynamic Form - Beta
----
 The **material-dynamic-form** is an Angular 15 component that provides a HTML Form which loads JSON configuration.
+
 The component is responsible for displaying the HTML Form, validation, error messages.
+
 It supports Angular material fields and pre-build or custom themes.
 
 ## Prerequisites
----
 This project requires NodeJS (version 16 or later) and NPM. Node and NPM are really easy to install. To 
 make sure you have them available on your machine, try running the following command.
 
@@ -18,7 +18,6 @@ v16.17.0
 
 
 ## Install
----
 To install the package, just run:
 
 ```sh
@@ -27,7 +26,6 @@ $ npm install material-dynamic-form
 
 
 ## Importing Modules
----
 ```sh
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -43,11 +41,9 @@ export class MyAppModule {}
 ```
 
 ## Demo
----
 In Progress
 
 ## Usage
----
 HTML
 
 ```sh
@@ -148,10 +144,8 @@ TS
 
 
 ## License
----
 MIT License
 
 
 ## Keywords
----
 material dynamic basic form
