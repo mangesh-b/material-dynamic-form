@@ -1,27 +1,157 @@
-# MaterialDynamicBasicForm
+# Material Dynamic Form - Beta
+---
+The **material-dynamic-form** is an Angular 15 component that provides a HTML Form which loads JSON configuration.
+The component is responsible for displaying the HTML Form, validation, error messages.
+It supports Angular material fields and pre-build or custom themes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+## Prerequisites
+---
+This project requires NodeJS (version 16 or later) and NPM. Node and NPM are really easy to install. To 
+make sure you have them available on your machine, try running the following command.
 
-## Development server
+```sh
+$ npm -v && node -v
+8.15.0
+v16.17.0
+```
+> This project was generated with Angular CLI version 15.0.4
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Install
+---
+To install the package, just run:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+$ npm install material-dynamic-form
+```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Importing Modules
+---
+```sh
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { MaterialDynamicFormModule } from 'material-dynamic-form'; // <-- import it
+import { AppComponent } from './app.component';
 
-## Running unit tests
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, MaterialDynamicFormModule], // <-- and include it
+  bootstrap: [AppComponent],
+})
+export class MyAppModule {}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Demo
+---
+In Progress
 
-## Running end-to-end tests
+## Usage
+---
+HTML
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+<material-dynamic-form 
+  [fields]="demoAllFields.fields" 
+  [buttons]="demoAllFields.buttons" 
+  [submitted]="submitted"
+  [validationError]="validationError" 
+  (submitBtnEvent)="submitBtnEvent($event)"
+>
+</material-dynamic-form>
+```
 
-## Further help
+TS
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+  validationError: any = {};
+  submitted: boolean = false;
+  @ViewChild(MaterialDynamicFormComponent, { static: false })
+  private dynamicFormComponent!: MaterialDynamicFormComponent;
+
+  demoAllFields: any = {
+    fields: [
+      {
+        type: 'header',
+        label: 'Employee Registration Form',
+        classes: "employee-form-header"
+      },
+      {
+        type: 'text',
+        name: 'firstName',
+        label: 'First Name',
+        default: '',
+        validation: {
+          required: true
+        },
+        appearance: 'fill',
+        hint: 'hey',
+        suffix: 'matSuffix', // matPrefix
+        suffixIcon: 'sentiment_very_satisfied',
+        alignPosition: 'end'
+      },
+      {
+        type: 'password',
+        name: 'password',
+        label: `Enter Password`,
+        default: '',
+        validation: {
+          required: true,
+          min: 8,
+          pattern: "[a-zA-Z0-9!@#$%\^&*)(+=._-]{4,}"
+        }
+      },
+      {
+        type: 'password',
+        name: 'confirmPassword',
+        label: `Enter Confirm Password`,
+        default: '',
+        validation: {
+          required: true,
+          min: 8,
+          max: 12,
+          pattern: "[a-zA-Z0-9!@#$%\^&*)(+=._-]{4,}"
+        }
+      },
+      {
+        type: 'textarea',
+        name: 'address',
+        label: `Address`,
+        default: 'Mumbai, India',
+        required: false
+      },
+      {
+        type: 'checkbox',
+        name: 'isActive',
+        label: `Employee Status`,
+        default: true,
+        required: true
+      },
+    ],
+    buttons: {
+      display: true,
+      align: 'center',
+      primaryButton: true,
+      primaryLabel: 'Submit',
+      secondaryButton: true,
+      secondaryLabel: 'Reset',
+      resetForm: true,
+      tertiaryButton: true,
+      tertiaryLabel: 'Random'
+    }
+  }
+
+  submitBtnEvent(event: any) {
+    console.log(event);
+  }
+```
+
+
+## License
+---
+MIT License
+
+
+## Keywords
+---
+material dynamic basic form
