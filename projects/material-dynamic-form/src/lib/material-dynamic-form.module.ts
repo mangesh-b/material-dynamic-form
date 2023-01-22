@@ -12,7 +12,7 @@ import { MomentUtcDateAdapter } from './directives/moment-utc-date-adapter';
 import { NumberDirective } from './directives/only-numbers';
 
 // Components
-import { BasicFormBuiderComponent } from './basic-form-buider.component';
+import { MaterialDynamicFormComponent } from './material-dynamic-form.component';
 import { DynamicComponent } from './dynamic/dynamic.component';
 
 // form fields
@@ -44,7 +44,7 @@ export const MY_FORMATS = {
 
 @NgModule({
   declarations: [
-    BasicFormBuiderComponent,
+    MaterialDynamicFormComponent,
     DynamicComponent,
     FormInputTypeComponent,
     FormCheckboxTypeComponent, FormTextareaTypeComponent, FormSelectTypeComponent,
@@ -61,9 +61,9 @@ export const MY_FORMATS = {
     MaterialModule
   ],
   exports: [
-    BasicFormBuiderComponent
+    MaterialDynamicFormComponent
   ],
   providers: [
   ]
 })
-export class FormBuilderModule { }
+export class MaterialDynamicFormModule { }

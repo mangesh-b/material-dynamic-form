@@ -34,11 +34,11 @@ export function CompareConfirmPassword(password: string, confrimPassword: string
 }
 
 @Component({
-  selector: 'dy-basic-form-buider',
-  templateUrl: './basic-form-buider.component.html',
-  styleUrls: ['./basic-form-buider.component.css']
+  selector: 'material-dynamic-form',
+  templateUrl: './material-dynamic-form.component.html',
+  styleUrls: ['./material-dynamic-form.component.css']
 })
-export class BasicFormBuiderComponent {
+export class MaterialDynamicFormComponent {
   form!: FormGroup;
   @Input() submitted: boolean = false;
   @Input() fields: any[] = [];

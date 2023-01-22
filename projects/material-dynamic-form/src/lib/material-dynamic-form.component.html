@@ -1,4 +1,4 @@
-<div id="basic-form-builder">
+<div id="material-dynamic-form">
     <ng-container *ngIf="fields.length">
         <form (ngSubmit)="onSubmit(form)" [formGroup]="form" #formRef="ngForm">
             <div *ngFor="let field of fields; let i = index;" 
