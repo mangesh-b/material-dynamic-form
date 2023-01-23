@@ -6,20 +6,21 @@ const moment = moment_;
 @Component({
   selector: 'app-date-type',
   template: `
-        <div [formGroup]="form" id="dy-date-type">
-            <mat-form-field>
-              <input matInput [matDatepicker]="controlName"
-                [max]="field.maxDate"
-                [min]="field.minDate"
-                [placeholder]="field.label" (focus)="controlName.open()"
-                [formControlName]="field.name" [readonly]="true"
-                [disabled]="!field.readonly"
-                (dateChange)="change($any($event.target).value, field.name)">
-              <mat-datepicker-toggle matSuffix [for]="controlName"></mat-datepicker-toggle>
-              <mat-datepicker #controlName></mat-datepicker>
-          </mat-form-field>
-        </div>
-      `
+    <div [formGroup]="form" id="dy-date-type">
+        <mat-form-field class="dy-mat-field">
+          <input matInput [matDatepicker]="controlName"
+            [max]="field.maxDate"
+            [min]="field.minDate"
+            [placeholder]="field.label" (focus)="controlName.open()"
+            [formControlName]="field.name" [readonly]="true"
+            [disabled]="!field.readonly"
+            (dateChange)="change($any($event.target).value, field.name)">
+          <mat-datepicker-toggle matSuffix [for]="controlName"></mat-datepicker-toggle>
+          <mat-datepicker #controlName></mat-datepicker>
+      </mat-form-field>
+    </div>
+  `,
+  styles: ['.dy-mat-field {width: 100%}']
 })
 
 export class FormDateTypeComponent implements OnInit {

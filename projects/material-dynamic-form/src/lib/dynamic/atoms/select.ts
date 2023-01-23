@@ -4,18 +4,19 @@ import { FormGroup, FormArray } from '@angular/forms';
 @Component({
   selector: 'app-select-type',
   template: `
-        <div [formGroup]="form" id="dy-select-type">
-            <mat-form-field>
-              <mat-label>{{field.label}}</mat-label>
-                <mat-select [formControlName]="field.name" [multiple]="field.multiselect" [compareWith]="compareFn"
-                 (ngModelChange)="change($event, field.name)" [disabled]="!field.readonly">
-                  <mat-option *ngFor="let obj of field.options" [value]="field.valueParam ? obj[field.valueParam] : obj">
-                    {{obj.name}}
-                  </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-      `
+    <div [formGroup]="form" id="dy-select-type">
+        <mat-form-field class="dy-mat-field">
+          <mat-label>{{field.label}}</mat-label>
+            <mat-select [formControlName]="field.name" [multiple]="field.multiselect" [compareWith]="compareFn"
+              (ngModelChange)="change($event, field.name)" [disabled]="!field.readonly">
+              <mat-option *ngFor="let obj of field.options" [value]="field.valueParam ? obj[field.valueParam] : obj">
+                {{obj.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+  `,
+  styles: ['.dy-mat-field {width: 100%}']
 })
 
 export class FormSelectTypeComponent {

@@ -5,18 +5,19 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-textarea-type',
   template: `
-        <div [formGroup]="form" id="dy-textarea-type">
-            <mat-form-field>
-              <mat-label>{{field.label}}</mat-label>
-              <textarea [maxlength]="field.maxLength" matInput
-                [formControlName]="field.name"
-                [readonly]="field.readonly"
-                (blur)="blur($any($event.target).value, field.name)"
-              >
-              </textarea>
-            </mat-form-field>
-        </div>
-      `
+    <div [formGroup]="form" id="dy-textarea-type">
+        <mat-form-field class="dy-mat-field">
+          <mat-label>{{field.label}}</mat-label>
+          <textarea [maxlength]="field.maxLength" matInput
+            [formControlName]="field.name"
+            [readonly]="field.readonly"
+            (blur)="blur($any($event.target).value, field.name)"
+          >
+          </textarea>
+        </mat-form-field>
+    </div>
+  `,
+  styles: ['.dy-mat-field {width: 100%}']
 })
 
 export class FormTextareaTypeComponent {

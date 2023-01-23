@@ -108,7 +108,6 @@ export class MaterialDynamicFormComponent {
   onSubmit(formdata: any) {
     this.isSubmitted = true;
     this.getFormValidationErrors();
-    console.log(formdata);
 
     if (formdata.invalid && this.fieldsMandatoryCheck) {
       return false;

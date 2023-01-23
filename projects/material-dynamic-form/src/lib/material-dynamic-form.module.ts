@@ -24,7 +24,6 @@ import { FormSelectTypeComponent } from './dynamic/atoms/select';
 import { FormTextareaTypeComponent } from './dynamic/atoms/textarea';
 import { FormPasswordTypeComponent } from './dynamic/atoms/password';
 import { FormCountrySelectTypeComponent } from './dynamic/atoms/countryselect';
-import { FormOtpInputTypeComponent } from './dynamic/atoms/otpinput';
 import { FormGroupSelectTypeComponent } from './dynamic/atoms/groupselect';
 import { FormNumberTypeComponent } from './dynamic/atoms/number';
 // END
@@ -49,7 +48,7 @@ export const MY_FORMATS = {
     FormInputTypeComponent,
     FormCheckboxTypeComponent, FormTextareaTypeComponent, FormSelectTypeComponent,
     FormRadioTypeComponent, FormDateTypeComponent, FormPasswordTypeComponent,
-    FormCountrySelectTypeComponent, FormOtpInputTypeComponent, FormGroupSelectTypeComponent, 
+    FormCountrySelectTypeComponent, FormGroupSelectTypeComponent, 
     FormNumberTypeComponent,
     DynamicComponent,
     NumberDirective

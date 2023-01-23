@@ -1,6 +1,6 @@
 {
   "name": "material-dynamic-form",
-  "version": "0.0.1-beta-0",
+  "version": "0.0.1-beta-2",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",

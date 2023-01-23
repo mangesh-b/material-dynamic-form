@@ -4,18 +4,18 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-radio-type',
   template: `
-        <div [formGroup]="form" id="radio-type">
-            <mat-radio-group [formControlName]="field.name" [disabled]="!field.readonly">
-                <mat-radio-button *ngFor="let obj of field.options" [value]="obj.value"
-                  style="min-width: 100px; margin-right: 10px;" (change)="change($event, field.name)">
-                  {{obj.label}}
-                </mat-radio-button>
-            </mat-radio-group>
-        </div>
-      `,
+    <div [formGroup]="form" id="radio-type">
+        <mat-radio-group [formControlName]="field.name" [disabled]="!field.readonly">
+            <mat-radio-button *ngFor="let obj of field.options" [value]="obj.value"
+              style="min-width: 100px; margin-right: 10px;" (change)="change($event, field.name)">
+              {{obj.label}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+  `,
   styles: [`
-  #radio-type {margin-top: 1rem; margin-bottom: 0.5rem;}
-  ::ng-deep .mat-radio-button.mat-radio-disabled .mat-radio-label-content {color: #00aeef !important;}
+    #radio-type {margin-top: 1rem; margin-bottom: 0.5rem;}
+    ::ng-deep .mat-radio-button.mat-radio-disabled .mat-radio-label-content {color: #00aeef !important;}
   `]
 })
 

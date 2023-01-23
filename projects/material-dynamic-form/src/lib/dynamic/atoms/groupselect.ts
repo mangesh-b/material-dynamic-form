@@ -4,21 +4,22 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-groupselect-type',
   template: `
-        <div [formGroup]="form" id="dy-groupselect-type">
-            <mat-form-field>
-              <mat-label>{{field.label}}</mat-label>
-                <mat-select [formControlName]="field.name"
-                 (ngModelChange)="change($event, field.name)" [disabled]="!field.readonly">
-                  <mat-optgroup *ngFor="let group of field.options" [label]="group.name"
-                    [disabled]="group.disabled">
-                  <mat-option *ngFor="let obj of group.childs" [value]="field.valueParam ? obj[field.valueParam] : obj">
-                    {{obj.name}}
-                  </mat-option>
-                </mat-optgroup>
-                </mat-select>
-            </mat-form-field>
-        </div>
-      `
+    <div [formGroup]="form" id="dy-groupselect-type">
+        <mat-form-field class="dy-mat-field">
+          <mat-label>{{field.label}}</mat-label>
+            <mat-select [formControlName]="field.name"
+              (ngModelChange)="change($event, field.name)" [disabled]="!field.readonly">
+              <mat-optgroup *ngFor="let group of field.options" [label]="group.name"
+                [disabled]="group.disabled">
+              <mat-option *ngFor="let obj of group.childs" [value]="field.valueParam ? obj[field.valueParam] : obj">
+                {{obj.name}}
+              </mat-option>
+            </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+    </div>
+  `,
+  styles: ['.dy-mat-field {width: 100%}']
 })
 
 export class FormGroupSelectTypeComponent {

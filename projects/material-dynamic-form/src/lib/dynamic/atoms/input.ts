@@ -5,21 +5,22 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-input-type',
   template: `
-        <div [formGroup]="form" id="dy-input-type">
-            <mat-form-field [appearance]="field.appearance">
-              <mat-label>{{field.label}}</mat-label>
-              <input [maxlength]="field.maxLength" matInput [type]="field.type"
-                [formControlName]="field.name"
-                [autocomplete]="'off'" [readonly]="field.readonly"
-                (input)="change($any($event.target).value, field.name)"
-                (blur)="blur($any($event.target).value, field.name)"
-              />
-              <mat-icon *ngIf="field.suffix" matSuffix>{{field.suffixIcon}}</mat-icon>
-              <mat-icon *ngIf="field.matPrefix" matPrefix>{{field.suffixIcon}}</mat-icon>
-              <mat-hint *ngIf="field.hint" [align]="field.alignPosition">{{field.hint}}</mat-hint>
-            </mat-form-field>
-        </div>
-      `
+    <div [formGroup]="form" id="dy-input-type">
+        <mat-form-field [appearance]="field.appearance" class="dy-mat-field">
+          <mat-label>{{field.label}}</mat-label>
+          <input [maxlength]="field.maxLength" matInput [type]="field.type"
+            [formControlName]="field.name"
+            [autocomplete]="'off'" [readonly]="field.readonly"
+            (input)="change($any($event.target).value, field.name)"
+            (blur)="blur($any($event.target).value, field.name)"
+          />
+          <mat-icon *ngIf="field.suffix" matSuffix>{{field.suffixIcon}}</mat-icon>
+          <mat-icon *ngIf="field.matPrefix" matPrefix>{{field.suffixIcon}}</mat-icon>
+          <mat-hint *ngIf="field.hint" [align]="field.alignPosition">{{field.hint}}</mat-hint>
+        </mat-form-field>
+    </div>
+  `,
+  styles: ['.dy-mat-field {width: 100%}']
 })
 
 export class FormInputTypeComponent {

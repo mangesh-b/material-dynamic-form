@@ -17,10 +17,6 @@
       (changeEvent)="inputChangeEvent.emit($event)"
       (blurEvent)="blurInputChangeEvent.emit($event)">
     </app-number-type>
-    <app-otpinput-type *ngSwitchCase="'otp'" [field]="field" [form]="form"
-      (changeEvent)="otpChangeEvent.emit($event)"
-      (blurEvent)="blurOtpChangeEvent.emit($event)">
-    </app-otpinput-type>
     <app-password-type *ngSwitchCase="'password'" [field]="field" [form]="form">
     </app-password-type>
     <app-checkbox-type *ngSwitchCase="'checkbox'" [field]="field" [form]="form"
@@ -48,7 +44,7 @@
 
     <div *ngIf="!isValid && (isDirty || isSubmitted)" class="error-msg">
       <div [hidden]="!isRequired">
-        {{field.reqMessage}} <span *ngIf="!field.reqMessage">{{field.label}} is required</span>
+        {{field.errorMessages?.required}} <span *ngIf="!field.errorMessages?.required">{{field.label}} is required</span>
       </div>
       <div [hidden]="!matDatepickerMin">
         {{field.label}} should be inferior
@@ -57,16 +53,16 @@
         {{field.label}} is greater
       </div>
       <div [hidden]="!mustGreater">
-        End date must be greater then Start date
+        {{field.errorMessages?.mustGreater}} <span *ngIf="!field.errorMessages?.mustGreater">End date must be greater then Start date</span>
       </div>
       <div [hidden]="!passwordNotMatched">
-        Confirm Password not matched
+        {{field.errorMessages?.passwordNotMatch}} <span *ngIf="!field.errorMessages?.passwordNotMatch">Confirm Password not matched</span>
       </div>
       <div [hidden]="!minLengthError">
-        {{field.reqMessage}} is minimum issue
+        {{field.errorMessages?.minimumLength}} <span *ngIf="!field.errorMessages?.minimumLength">{{field.label}} minimum length set</span>
       </div>
       <div [hidden]="!maxLengthError">
-        {{field.reqMessage}} is maxlength issue
+        {{field.errorMessages?.maximumLength}} <span *ngIf="!field.errorMessages?.maximumLength">{{field.label}} maximum length set</span>
       </div>
     </div>
     <div [ngClass]="fieldNameError && isValid ? 'visible-off' : 'visible-on'" class="error-msg">

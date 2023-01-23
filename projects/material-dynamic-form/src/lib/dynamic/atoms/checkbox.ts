@@ -4,13 +4,13 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-checkbox-type',
   template: `
-        <div id="dy-checkbox-type" [formGroup]="form">
-          <mat-checkbox [formControlName]="field.name"
-            (ngModelChange)="change($event, field.name)">
-            {{field.label}}
-          </mat-checkbox>
-        </div>
-      `,
+    <div id="dy-checkbox-type" [formGroup]="form">
+      <mat-checkbox [formControlName]="field.name"
+        (ngModelChange)="change($event, field.name)">
+        {{field.label}}
+      </mat-checkbox>
+    </div>
+  `,
   styles: ['#checkbox-type {margin-top: 1rem; margin-bottom: 0.5rem;}']
 })
 
