@@ -1,8 +1,8 @@
 <div id="material-dynamic-form">
     <ng-container *ngIf="fields.length">
-        <form (ngSubmit)="onSubmit(form)" [formGroup]="form" #formRef="ngForm">
+        <form (ngSubmit)="onSubmit(form)" [formGroup]="form" #formRef="ngForm" class="row">
             <div *ngFor="let field of fields; let i = index;" 
-                [class]="field.classes" [class]="{'form-header': field.type === 'header'}" 
+                [class]="field.classes"  [class.form-header]="field.type === 'header'"
                 id="dy-{{field.name}}-{{i}}">
                 <form-dynamic [field]="field" [form]="form" [isSubmitted]="isSubmitted"
                     [validationError]="validationError" (selectChangeEvent)="selectChangeEvent.emit($event)"
@@ -19,7 +19,6 @@
                 <div class="fix"></div>
             </div>
 
-            <!-- [ngStyle]="{'height': '20px'}" -->
             <div class="error-msg transition-all col"
                 [ngClass]="validationError && validationError.genericMessage ? 'visible-on' : 'visible-off'">
                 {{validationError?.genericMessage}}
