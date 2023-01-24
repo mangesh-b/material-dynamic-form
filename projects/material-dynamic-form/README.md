@@ -41,7 +41,7 @@ export class MyAppModule {}
 ```
 
 ## Demo
-In Progress
+DEMO(https://stackblitz.com/edit/angular-ivy-dt86tr)
 
 ## Usage
 HTML
