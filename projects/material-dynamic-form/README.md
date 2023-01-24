@@ -41,7 +41,7 @@ export class MyAppModule {}
 ```
 
 ## Demo
-Demonstration of available features available [here](https://angular-ivy-dt86tr.stackblitz.io)
+Demonstration of available features available [here](https://stackblitz.com/edit/angular-ivy-dt86tr)
 
 ## Usage
 HTML
