@@ -26,7 +26,7 @@ $ npm install material-dynamic-form
 
 
 ## Importing Modules
-```sh
+```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialDynamicFormModule } from 'material-dynamic-form'; // <-- import it
@@ -41,12 +41,12 @@ export class MyAppModule {}
 ```
 
 ## Demo
-[DEMO](https://stackblitz.com/edit/angular-ivy-dt86tr)
+Demonstration of available features available [here](https://angular-ivy-dt86tr.stackblitz.io)
 
 ## Usage
 HTML
 
-```sh
+```html
 <material-dynamic-form 
   [fields]="demoAllFields.fields" 
   [buttons]="demoAllFields.buttons" 
@@ -59,7 +59,7 @@ HTML
 
 TS
 
-```sh
+```ts
   validationError: any = {};
   submitted: boolean = false;
   @ViewChild(MaterialDynamicFormComponent, { static: false })
@@ -143,7 +143,7 @@ TS
 ```
 
 ## Default values and usage
-```sh
+```ts
 fieldsMandatoryCheck: boolean = true;
 
 {
@@ -183,7 +183,7 @@ fieldsMandatoryCheck: boolean = true;
   }
 }
 
-> Reserved name such as - password, confirmPassword, startDate, endDate
+// Reserved name such as - password, confirmPassword, startDate, endDate
 ```
 
 
