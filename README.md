@@ -1,4 +1,4 @@
-# Material Dynamic Form - Beta
+# Material Dynamic Form
 The **material-dynamic-form** is an Angular 15 component that provides a HTML Form which loads JSON configuration.
 
 The component is responsible for displaying the HTML Form, validation, error messages.
